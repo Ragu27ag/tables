@@ -3,24 +3,21 @@ import React from "react";
 import * as XLSX from "xlsx";
 import products from "./products.json";
 const handleDownload = () => {
-  const table = document.getElementById("mytable"); // Replace with your table's ID
+  const table = document.getElementById("mytable");
 
   const wb = XLSX.utils.book_new();
   const ws = XLSX.utils.table_to_sheet(table);
 
-  // Define custom colors
   const customColors = {
-    redColor: { patternType: "solid", fgColor: { rgb: "FF0000" } }, // Red color
-    greenColor: { patternType: "solid", fgColor: { rgb: "00FF00" } }, // Green color
-    blueColor: { patternType: "solid", fgColor: { rgb: "0000FF" } }, // Blue color
+    redColor: { patternType: "solid", fgColor: { rgb: "FF0000" } },
+    greenColor: { patternType: "solid", fgColor: { rgb: "00FF00" } },
+    blueColor: { patternType: "solid", fgColor: { rgb: "0000FF" } },
   };
 
-  // Assign cell addresses and custom color keys
   const cellColorMap = {
-    A1: "redColor", // Assigning red color to cell A1
-    B2: "greenColor", // Assigning green color to cell B2
-    C3: "blueColor", // Assigning blue color to cell C3
-    // Add more cell addresses as needed
+    A1: "redColor",
+    B1: "greenColor",
+    C1: "blueColor",
   };
 
   // Apply custom colors to cells
